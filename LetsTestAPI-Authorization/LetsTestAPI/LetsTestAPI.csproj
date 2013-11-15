@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -126,6 +128,66 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WishListController.cs" />
+    <Compile Include="EDM\Candidate.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\CandidatesInLanguage.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\CandidatesInTechnology.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Instance.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Language.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\LetsTestDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetsTestDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\LetsTestDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\LetsTestDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetsTestDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Question.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Role.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Specialist.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\SpecialistsInTechnology.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Technology.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\Test.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\TestsInTechnology.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\User.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\UserAnswer.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDM\UsersInRole.cs">
+      <DependentUpon>LetsTestDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +258,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="EDM\LetsTestDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LetsTestDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EDM\LetsTestDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LetsTestDB.edmx</DependentUpon>
+      <LastGenOutput>LetsTestDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EDM\LetsTestDB.edmx.diagram">
+      <DependentUpon>LetsTestDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="EDM\LetsTestDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LetsTestDB.edmx</DependentUpon>
+      <LastGenOutput>LetsTestDB.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -244,6 +323,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

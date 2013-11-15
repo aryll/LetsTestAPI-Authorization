@@ -1,0 +1,1222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LetsTestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="LetsTestModelStoreContainer">
+          <EntitySet Name="Languages" EntityType="LetsTestModel.Store.Languages" store:Type="Tables" Schema="dictionary" />
+          <EntitySet Name="Technologies" EntityType="LetsTestModel.Store.Technologies" store:Type="Tables" Schema="dictionary" />
+          <EntitySet Name="Instances" EntityType="LetsTestModel.Store.Instances" store:Type="Tables" Schema="test" />
+          <EntitySet Name="Questions" EntityType="LetsTestModel.Store.Questions" store:Type="Tables" Schema="test" />
+          <EntitySet Name="Tests" EntityType="LetsTestModel.Store.Tests" store:Type="Tables" Schema="test" />
+          <EntitySet Name="TestsInTechnologies" EntityType="LetsTestModel.Store.TestsInTechnologies" store:Type="Tables" Schema="test" />
+          <EntitySet Name="UserAnswers" EntityType="LetsTestModel.Store.UserAnswers" store:Type="Tables" Schema="test" />
+          <EntitySet Name="Candidates" EntityType="LetsTestModel.Store.Candidates" store:Type="Tables" Schema="users" />
+          <EntitySet Name="CandidatesInLanguages" EntityType="LetsTestModel.Store.CandidatesInLanguages" store:Type="Tables" Schema="users" />
+          <EntitySet Name="CandidatesInTechnologies" EntityType="LetsTestModel.Store.CandidatesInTechnologies" store:Type="Tables" Schema="users" />
+          <EntitySet Name="Roles" EntityType="LetsTestModel.Store.Roles" store:Type="Tables" Schema="users" />
+          <EntitySet Name="Specialists" EntityType="LetsTestModel.Store.Specialists" store:Type="Tables" Schema="users" />
+          <EntitySet Name="SpecialistsInTechnologies" EntityType="LetsTestModel.Store.SpecialistsInTechnologies" store:Type="Tables" Schema="users" />
+          <EntitySet Name="Users" EntityType="LetsTestModel.Store.Users" store:Type="Tables" Schema="users" />
+          <EntitySet Name="UsersInRoles" EntityType="LetsTestModel.Store.UsersInRoles" store:Type="Tables" Schema="users" />
+          <AssociationSet Name="FK_Candidates_Users" Association="LetsTestModel.Store.FK_Candidates_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Candidates" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInLanguages_Languages" Association="LetsTestModel.Store.FK_CandidatesInLanguages_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="CandidatesInLanguages" EntitySet="CandidatesInLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInLanguages_Users_Candidates" Association="LetsTestModel.Store.FK_CandidatesInLanguages_Users_Candidates">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CandidatesInLanguages" EntitySet="CandidatesInLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInTechnologies_Technologies" Association="LetsTestModel.Store.FK_CandidatesInTechnologies_Technologies">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="CandidatesInTechnologies" EntitySet="CandidatesInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInTechnologies_Users_Candidate" Association="LetsTestModel.Store.FK_CandidatesInTechnologies_Users_Candidate">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CandidatesInTechnologies" EntitySet="CandidatesInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Tests" Association="LetsTestModel.Store.FK_Instances_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Users_Candidate" Association="LetsTestModel.Store.FK_Instances_Users_Candidate">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Users_Creator" Association="LetsTestModel.Store.FK_Instances_Users_Creator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Tests" Association="LetsTestModel.Store.FK_Questions_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Specialists_Users" Association="LetsTestModel.Store.FK_Specialists_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Specialists" EntitySet="Specialists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpecialistsInTechnologies_Technologies" Association="LetsTestModel.Store.FK_SpecialistsInTechnologies_Technologies">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="SpecialistsInTechnologies" EntitySet="SpecialistsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpecialistsInTechnologies_Users_Specialists" Association="LetsTestModel.Store.FK_SpecialistsInTechnologies_Users_Specialists">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="SpecialistsInTechnologies" EntitySet="SpecialistsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Users" Association="LetsTestModel.Store.FK_Test_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestsInTechnologies_Technology" Association="LetsTestModel.Store.FK_TestsInTechnologies_Technology">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="TestsInTechnologies" EntitySet="TestsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestsInTechnologies_Tests" Association="LetsTestModel.Store.FK_TestsInTechnologies_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="TestsInTechnologies" EntitySet="TestsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAnswers_Instances" Association="LetsTestModel.Store.FK_UserAnswers_Instances">
+            <End Role="Instances" EntitySet="Instances" />
+            <End Role="UserAnswers" EntitySet="UserAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAnswers_Questions" Association="LetsTestModel.Store.FK_UserAnswers_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="UserAnswers" EntitySet="UserAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Roles" Association="LetsTestModel.Store.FK_UsersInRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Users" Association="LetsTestModel.Store.FK_UsersInRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Technologies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatorID" Type="int" Nullable="false" />
+          <Property Name="CandidateID" Type="int" Nullable="false" />
+          <Property Name="IsFinished" Type="bit" Nullable="false" />
+          <Property Name="IsScored" Type="bit" Nullable="false" />
+          <Property Name="Score" Type="int" />
+          <Property Name="TestID" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="ClosureDate" Type="datetime2" />
+          <Property Name="EndTime" Type="datetime2" />
+          <Property Name="GuidUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Answers" Type="xml" Nullable="false" />
+          <Property Name="IsMultipleChoice" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="bit" />
+          <Property Name="TestID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SpecialistID" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="Time" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestsInTechnologies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TestID" Type="int" Nullable="false" />
+          <Property Name="TechnologyID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAnswers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="int" Nullable="false" />
+          <Property Name="InstanceID" Type="int" Nullable="false" />
+          <Property Name="Choices" Type="xml" />
+          <Property Name="OpenQuestionAnswer" Type="nvarchar(max)" />
+          <Property Name="Points" Type="int" Nullable="false" />
+          <Property Name="IsScored" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Candidates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime2" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Schools" Type="xml" />
+          <Property Name="Experience" Type="xml" />
+          <Property Name="Skills" Type="xml" />
+          <Property Name="Courses" Type="xml" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="IsRecruitmentOpened" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CandidatesInLanguages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CandidateID" Type="int" Nullable="false" />
+          <Property Name="LanguageID" Type="int" Nullable="false" />
+          <Property Name="Level" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CandidatesInTechnologies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CandidateID" Type="int" Nullable="false" />
+          <Property Name="TechnologyID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Specialists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="MajorSpeciality" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SpecialistsInTechnologies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TechnologyID" Type="int" Nullable="false" />
+          <Property Name="SpecialistID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Candidates_Users">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="Candidates" Type="LetsTestModel.Store.Candidates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Candidates">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInLanguages_Languages">
+          <End Role="Languages" Type="LetsTestModel.Store.Languages" Multiplicity="1" />
+          <End Role="CandidatesInLanguages" Type="LetsTestModel.Store.CandidatesInLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInLanguages">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInLanguages_Users_Candidates">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="CandidatesInLanguages" Type="LetsTestModel.Store.CandidatesInLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInLanguages">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInTechnologies_Technologies">
+          <End Role="Technologies" Type="LetsTestModel.Store.Technologies" Multiplicity="1" />
+          <End Role="CandidatesInTechnologies" Type="LetsTestModel.Store.CandidatesInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInTechnologies_Users_Candidate">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="CandidatesInTechnologies" Type="LetsTestModel.Store.CandidatesInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInTechnologies">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Tests">
+          <End Role="Tests" Type="LetsTestModel.Store.Tests" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Store.Instances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Users_Candidate">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Store.Instances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Users_Creator">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Store.Instances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="CreatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Tests">
+          <End Role="Tests" Type="LetsTestModel.Store.Tests" Multiplicity="1" />
+          <End Role="Questions" Type="LetsTestModel.Store.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Specialists_Users">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="Specialists" Type="LetsTestModel.Store.Specialists" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Specialists">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpecialistsInTechnologies_Technologies">
+          <End Role="Technologies" Type="LetsTestModel.Store.Technologies" Multiplicity="1" />
+          <End Role="SpecialistsInTechnologies" Type="LetsTestModel.Store.SpecialistsInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SpecialistsInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpecialistsInTechnologies_Users_Specialists">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="SpecialistsInTechnologies" Type="LetsTestModel.Store.SpecialistsInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SpecialistsInTechnologies">
+              <PropertyRef Name="SpecialistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Test_Users">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="Tests" Type="LetsTestModel.Store.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="SpecialistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TestsInTechnologies_Technology">
+          <End Role="Technologies" Type="LetsTestModel.Store.Technologies" Multiplicity="1" />
+          <End Role="TestsInTechnologies" Type="LetsTestModel.Store.TestsInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestsInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TestsInTechnologies_Tests">
+          <End Role="Tests" Type="LetsTestModel.Store.Tests" Multiplicity="1" />
+          <End Role="TestsInTechnologies" Type="LetsTestModel.Store.TestsInTechnologies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestsInTechnologies">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAnswers_Instances">
+          <End Role="Instances" Type="LetsTestModel.Store.Instances" Multiplicity="1" />
+          <End Role="UserAnswers" Type="LetsTestModel.Store.UserAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instances">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAnswers">
+              <PropertyRef Name="InstanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAnswers_Questions">
+          <End Role="Questions" Type="LetsTestModel.Store.Questions" Multiplicity="1" />
+          <End Role="UserAnswers" Type="LetsTestModel.Store.UserAnswers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAnswers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Roles">
+          <End Role="Roles" Type="LetsTestModel.Store.Roles" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="LetsTestModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Users">
+          <End Role="Users" Type="LetsTestModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="LetsTestModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LetsTestModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LetsTestEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Languages" EntityType="LetsTestModel.Language" />
+          <EntitySet Name="Technologies" EntityType="LetsTestModel.Technology" />
+          <EntitySet Name="Instances" EntityType="LetsTestModel.Instance" />
+          <EntitySet Name="Questions" EntityType="LetsTestModel.Question" />
+          <EntitySet Name="Tests" EntityType="LetsTestModel.Test" />
+          <EntitySet Name="TestsInTechnologies" EntityType="LetsTestModel.TestsInTechnology" />
+          <EntitySet Name="UserAnswers" EntityType="LetsTestModel.UserAnswer" />
+          <EntitySet Name="Candidates" EntityType="LetsTestModel.Candidate" />
+          <EntitySet Name="CandidatesInLanguages" EntityType="LetsTestModel.CandidatesInLanguage" />
+          <EntitySet Name="CandidatesInTechnologies" EntityType="LetsTestModel.CandidatesInTechnology" />
+          <EntitySet Name="Roles" EntityType="LetsTestModel.Role" />
+          <EntitySet Name="Specialists" EntityType="LetsTestModel.Specialist" />
+          <EntitySet Name="SpecialistsInTechnologies" EntityType="LetsTestModel.SpecialistsInTechnology" />
+          <EntitySet Name="Users" EntityType="LetsTestModel.User" />
+          <EntitySet Name="UsersInRoles" EntityType="LetsTestModel.UsersInRole" />
+          <AssociationSet Name="FK_CandidatesInLanguages_Languages" Association="LetsTestModel.FK_CandidatesInLanguages_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="CandidatesInLanguages" EntitySet="CandidatesInLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInTechnologies_Technologies" Association="LetsTestModel.FK_CandidatesInTechnologies_Technologies">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="CandidatesInTechnologies" EntitySet="CandidatesInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpecialistsInTechnologies_Technologies" Association="LetsTestModel.FK_SpecialistsInTechnologies_Technologies">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="SpecialistsInTechnologies" EntitySet="SpecialistsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestsInTechnologies_Technology" Association="LetsTestModel.FK_TestsInTechnologies_Technology">
+            <End Role="Technologies" EntitySet="Technologies" />
+            <End Role="TestsInTechnologies" EntitySet="TestsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Tests" Association="LetsTestModel.FK_Instances_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Users_Candidate" Association="LetsTestModel.FK_Instances_Users_Candidate">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instances_Users_Creator" Association="LetsTestModel.FK_Instances_Users_Creator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Instances" EntitySet="Instances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAnswers_Instances" Association="LetsTestModel.FK_UserAnswers_Instances">
+            <End Role="Instances" EntitySet="Instances" />
+            <End Role="UserAnswers" EntitySet="UserAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Tests" Association="LetsTestModel.FK_Questions_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAnswers_Questions" Association="LetsTestModel.FK_UserAnswers_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="UserAnswers" EntitySet="UserAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Users" Association="LetsTestModel.FK_Test_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TestsInTechnologies_Tests" Association="LetsTestModel.FK_TestsInTechnologies_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="TestsInTechnologies" EntitySet="TestsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Candidates_Users" Association="LetsTestModel.FK_Candidates_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Candidates" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInLanguages_Users_Candidates" Association="LetsTestModel.FK_CandidatesInLanguages_Users_Candidates">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CandidatesInLanguages" EntitySet="CandidatesInLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CandidatesInTechnologies_Users_Candidate" Association="LetsTestModel.FK_CandidatesInTechnologies_Users_Candidate">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CandidatesInTechnologies" EntitySet="CandidatesInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Roles" Association="LetsTestModel.FK_UsersInRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Specialists_Users" Association="LetsTestModel.FK_Specialists_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Specialists" EntitySet="Specialists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpecialistsInTechnologies_Users_Specialists" Association="LetsTestModel.FK_SpecialistsInTechnologies_Users_Specialists">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="SpecialistsInTechnologies" EntitySet="SpecialistsInTechnologies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersInRoles_Users" Association="LetsTestModel.FK_UsersInRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CandidatesInLanguages" Relationship="LetsTestModel.FK_CandidatesInLanguages_Languages" FromRole="Languages" ToRole="CandidatesInLanguages" />
+        </EntityType>
+        <EntityType Name="Technology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CandidatesInTechnologies" Relationship="LetsTestModel.FK_CandidatesInTechnologies_Technologies" FromRole="Technologies" ToRole="CandidatesInTechnologies" />
+          <NavigationProperty Name="SpecialistsInTechnologies" Relationship="LetsTestModel.FK_SpecialistsInTechnologies_Technologies" FromRole="Technologies" ToRole="SpecialistsInTechnologies" />
+          <NavigationProperty Name="TestsInTechnologies" Relationship="LetsTestModel.FK_TestsInTechnologies_Technology" FromRole="Technologies" ToRole="TestsInTechnologies" />
+        </EntityType>
+        <EntityType Name="Instance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatorID" Type="Int32" Nullable="false" />
+          <Property Name="CandidateID" Type="Int32" Nullable="false" />
+          <Property Name="IsFinished" Type="Boolean" Nullable="false" />
+          <Property Name="IsScored" Type="Boolean" Nullable="false" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ClosureDate" Type="DateTime" Precision="7" />
+          <Property Name="EndTime" Type="DateTime" Precision="7" />
+          <Property Name="GuidUrl" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Test" Relationship="LetsTestModel.FK_Instances_Tests" FromRole="Instances" ToRole="Tests" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_Instances_Users_Candidate" FromRole="Instances" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="LetsTestModel.FK_Instances_Users_Creator" FromRole="Instances" ToRole="Users" />
+          <NavigationProperty Name="UserAnswers" Relationship="LetsTestModel.FK_UserAnswers_Instances" FromRole="Instances" ToRole="UserAnswers" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Question1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Answers" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsMultipleChoice" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="Boolean" />
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Test" Relationship="LetsTestModel.FK_Questions_Tests" FromRole="Questions" ToRole="Tests" />
+          <NavigationProperty Name="UserAnswers" Relationship="LetsTestModel.FK_UserAnswers_Questions" FromRole="Questions" ToRole="UserAnswers" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SpecialistID" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Time" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Instances" Relationship="LetsTestModel.FK_Instances_Tests" FromRole="Tests" ToRole="Instances" />
+          <NavigationProperty Name="Questions" Relationship="LetsTestModel.FK_Questions_Tests" FromRole="Tests" ToRole="Questions" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_Test_Users" FromRole="Tests" ToRole="Users" />
+          <NavigationProperty Name="TestsInTechnologies" Relationship="LetsTestModel.FK_TestsInTechnologies_Tests" FromRole="Tests" ToRole="TestsInTechnologies" />
+        </EntityType>
+        <EntityType Name="TestsInTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="TechnologyID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Technology" Relationship="LetsTestModel.FK_TestsInTechnologies_Technology" FromRole="TestsInTechnologies" ToRole="Technologies" />
+          <NavigationProperty Name="Test" Relationship="LetsTestModel.FK_TestsInTechnologies_Tests" FromRole="TestsInTechnologies" ToRole="Tests" />
+        </EntityType>
+        <EntityType Name="UserAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" Nullable="false" />
+          <Property Name="InstanceID" Type="Int32" Nullable="false" />
+          <Property Name="Choices" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OpenQuestionAnswer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Points" Type="Int32" Nullable="false" />
+          <Property Name="IsScored" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Instance" Relationship="LetsTestModel.FK_UserAnswers_Instances" FromRole="UserAnswers" ToRole="Instances" />
+          <NavigationProperty Name="Question" Relationship="LetsTestModel.FK_UserAnswers_Questions" FromRole="UserAnswers" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="Candidate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Adress" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Schools" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Experience" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Skills" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Courses" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsRecruitmentOpened" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_Candidates_Users" FromRole="Candidates" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CandidatesInLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CandidateID" Type="Int32" Nullable="false" />
+          <Property Name="LanguageID" Type="Int32" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="LetsTestModel.FK_CandidatesInLanguages_Languages" FromRole="CandidatesInLanguages" ToRole="Languages" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_CandidatesInLanguages_Users_Candidates" FromRole="CandidatesInLanguages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CandidatesInTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CandidateID" Type="Int32" Nullable="false" />
+          <Property Name="TechnologyID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Technology" Relationship="LetsTestModel.FK_CandidatesInTechnologies_Technologies" FromRole="CandidatesInTechnologies" ToRole="Technologies" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_CandidatesInTechnologies_Users_Candidate" FromRole="CandidatesInTechnologies" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UsersInRoles" Relationship="LetsTestModel.FK_UsersInRoles_Roles" FromRole="Roles" ToRole="UsersInRoles" />
+        </EntityType>
+        <EntityType Name="Specialist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="MajorSpeciality" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_Specialists_Users" FromRole="Specialists" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="SpecialistsInTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TechnologyID" Type="Int32" Nullable="false" />
+          <Property Name="SpecialistID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Technology" Relationship="LetsTestModel.FK_SpecialistsInTechnologies_Technologies" FromRole="SpecialistsInTechnologies" ToRole="Technologies" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_SpecialistsInTechnologies_Users_Specialists" FromRole="SpecialistsInTechnologies" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Instances" Relationship="LetsTestModel.FK_Instances_Users_Candidate" FromRole="Users" ToRole="Instances" />
+          <NavigationProperty Name="Instances1" Relationship="LetsTestModel.FK_Instances_Users_Creator" FromRole="Users" ToRole="Instances" />
+          <NavigationProperty Name="Tests" Relationship="LetsTestModel.FK_Test_Users" FromRole="Users" ToRole="Tests" />
+          <NavigationProperty Name="Candidates" Relationship="LetsTestModel.FK_Candidates_Users" FromRole="Users" ToRole="Candidates" />
+          <NavigationProperty Name="CandidatesInLanguages" Relationship="LetsTestModel.FK_CandidatesInLanguages_Users_Candidates" FromRole="Users" ToRole="CandidatesInLanguages" />
+          <NavigationProperty Name="CandidatesInTechnologies" Relationship="LetsTestModel.FK_CandidatesInTechnologies_Users_Candidate" FromRole="Users" ToRole="CandidatesInTechnologies" />
+          <NavigationProperty Name="Specialists" Relationship="LetsTestModel.FK_Specialists_Users" FromRole="Users" ToRole="Specialists" />
+          <NavigationProperty Name="SpecialistsInTechnologies" Relationship="LetsTestModel.FK_SpecialistsInTechnologies_Users_Specialists" FromRole="Users" ToRole="SpecialistsInTechnologies" />
+          <NavigationProperty Name="UsersInRoles" Relationship="LetsTestModel.FK_UsersInRoles_Users" FromRole="Users" ToRole="UsersInRoles" />
+        </EntityType>
+        <EntityType Name="UsersInRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="LetsTestModel.FK_UsersInRoles_Roles" FromRole="UsersInRoles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="LetsTestModel.FK_UsersInRoles_Users" FromRole="UsersInRoles" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_CandidatesInLanguages_Languages">
+          <End Role="Languages" Type="LetsTestModel.Language" Multiplicity="1" />
+          <End Role="CandidatesInLanguages" Type="LetsTestModel.CandidatesInLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInLanguages">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInTechnologies_Technologies">
+          <End Role="Technologies" Type="LetsTestModel.Technology" Multiplicity="1" />
+          <End Role="CandidatesInTechnologies" Type="LetsTestModel.CandidatesInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpecialistsInTechnologies_Technologies">
+          <End Role="Technologies" Type="LetsTestModel.Technology" Multiplicity="1" />
+          <End Role="SpecialistsInTechnologies" Type="LetsTestModel.SpecialistsInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SpecialistsInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TestsInTechnologies_Technology">
+          <End Role="Technologies" Type="LetsTestModel.Technology" Multiplicity="1" />
+          <End Role="TestsInTechnologies" Type="LetsTestModel.TestsInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Technologies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestsInTechnologies">
+              <PropertyRef Name="TechnologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Tests">
+          <End Role="Tests" Type="LetsTestModel.Test" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Instance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Users_Candidate">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Instance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instances_Users_Creator">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="Instances" Type="LetsTestModel.Instance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instances">
+              <PropertyRef Name="CreatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAnswers_Instances">
+          <End Role="Instances" Type="LetsTestModel.Instance" Multiplicity="1" />
+          <End Role="UserAnswers" Type="LetsTestModel.UserAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instances">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAnswers">
+              <PropertyRef Name="InstanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Tests">
+          <End Role="Tests" Type="LetsTestModel.Test" Multiplicity="1" />
+          <End Role="Questions" Type="LetsTestModel.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAnswers_Questions">
+          <End Role="Questions" Type="LetsTestModel.Question" Multiplicity="1" />
+          <End Role="UserAnswers" Type="LetsTestModel.UserAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserAnswers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Test_Users">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="Tests" Type="LetsTestModel.Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="SpecialistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TestsInTechnologies_Tests">
+          <End Role="Tests" Type="LetsTestModel.Test" Multiplicity="1" />
+          <End Role="TestsInTechnologies" Type="LetsTestModel.TestsInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestsInTechnologies">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Candidates_Users">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="Candidates" Type="LetsTestModel.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Candidates">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInLanguages_Users_Candidates">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="CandidatesInLanguages" Type="LetsTestModel.CandidatesInLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInLanguages">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CandidatesInTechnologies_Users_Candidate">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="CandidatesInTechnologies" Type="LetsTestModel.CandidatesInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CandidatesInTechnologies">
+              <PropertyRef Name="CandidateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Roles">
+          <End Role="Roles" Type="LetsTestModel.Role" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="LetsTestModel.UsersInRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Specialists_Users">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="Specialists" Type="LetsTestModel.Specialist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Specialists">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpecialistsInTechnologies_Users_Specialists">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="SpecialistsInTechnologies" Type="LetsTestModel.SpecialistsInTechnology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SpecialistsInTechnologies">
+              <PropertyRef Name="SpecialistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersInRoles_Users">
+          <End Role="Users" Type="LetsTestModel.User" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="LetsTestModel.UsersInRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LetsTestModelStoreContainer" CdmEntityContainer="LetsTestEntities">
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="LetsTestModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Technologies">
+            <EntityTypeMapping TypeName="LetsTestModel.Technology">
+              <MappingFragment StoreEntitySet="Technologies">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instances">
+            <EntityTypeMapping TypeName="LetsTestModel.Instance">
+              <MappingFragment StoreEntitySet="Instances">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreatorID" ColumnName="CreatorID" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="IsScored" ColumnName="IsScored" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ClosureDate" ColumnName="ClosureDate" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="GuidUrl" ColumnName="GuidUrl" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="LetsTestModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Question1" ColumnName="Question" />
+                <ScalarProperty Name="Answers" ColumnName="Answers" />
+                <ScalarProperty Name="IsMultipleChoice" ColumnName="IsMultipleChoice" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="LetsTestModel.Test">
+              <MappingFragment StoreEntitySet="Tests">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SpecialistID" ColumnName="SpecialistID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestsInTechnologies">
+            <EntityTypeMapping TypeName="LetsTestModel.TestsInTechnology">
+              <MappingFragment StoreEntitySet="TestsInTechnologies">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="TechnologyID" ColumnName="TechnologyID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAnswers">
+            <EntityTypeMapping TypeName="LetsTestModel.UserAnswer">
+              <MappingFragment StoreEntitySet="UserAnswers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+                <ScalarProperty Name="Choices" ColumnName="Choices" />
+                <ScalarProperty Name="OpenQuestionAnswer" ColumnName="OpenQuestionAnswer" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="IsScored" ColumnName="IsScored" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Candidates">
+            <EntityTypeMapping TypeName="LetsTestModel.Candidate">
+              <MappingFragment StoreEntitySet="Candidates">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Schools" ColumnName="Schools" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="Courses" ColumnName="Courses" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsRecruitmentOpened" ColumnName="IsRecruitmentOpened" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CandidatesInLanguages">
+            <EntityTypeMapping TypeName="LetsTestModel.CandidatesInLanguage">
+              <MappingFragment StoreEntitySet="CandidatesInLanguages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CandidatesInTechnologies">
+            <EntityTypeMapping TypeName="LetsTestModel.CandidatesInTechnology">
+              <MappingFragment StoreEntitySet="CandidatesInTechnologies">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CandidateID" ColumnName="CandidateID" />
+                <ScalarProperty Name="TechnologyID" ColumnName="TechnologyID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="LetsTestModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialists">
+            <EntityTypeMapping TypeName="LetsTestModel.Specialist">
+              <MappingFragment StoreEntitySet="Specialists">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MajorSpeciality" ColumnName="MajorSpeciality" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialistsInTechnologies">
+            <EntityTypeMapping TypeName="LetsTestModel.SpecialistsInTechnology">
+              <MappingFragment StoreEntitySet="SpecialistsInTechnologies">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TechnologyID" ColumnName="TechnologyID" />
+                <ScalarProperty Name="SpecialistID" ColumnName="SpecialistID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LetsTestModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersInRoles">
+            <EntityTypeMapping TypeName="LetsTestModel.UsersInRole">
+              <MappingFragment StoreEntitySet="UsersInRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

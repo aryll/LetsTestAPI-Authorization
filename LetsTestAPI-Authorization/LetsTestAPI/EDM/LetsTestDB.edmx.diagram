@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1097965e0b7d4a8e98601446bba36ba0" Name="Diagram1">
+        <EntityTypeShape EntityType="LetsTestModel.Language" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Technology" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Instance" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Question" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Test" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.TestsInTechnology" Width="1.5" PointX="8.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.UserAnswer" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Candidate" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.CandidatesInLanguage" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.CandidatesInTechnology" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Role" Width="1.5" PointX="3.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.Specialist" Width="1.5" PointX="3" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.SpecialistsInTechnology" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.User" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LetsTestModel.UsersInRole" Width="1.5" PointX="6" PointY="20.875" IsExpanded="true" />
+        <AssociationConnector Association="LetsTestModel.FK_CandidatesInLanguages_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_CandidatesInTechnologies_Technologies" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_SpecialistsInTechnologies_Technologies" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_TestsInTechnologies_Technology" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Instances_Tests" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Instances_Users_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Instances_Users_Creator" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_UserAnswers_Instances" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Questions_Tests" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_UserAnswers_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Test_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_TestsInTechnologies_Tests" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Candidates_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_CandidatesInLanguages_Users_Candidates" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_CandidatesInTechnologies_Users_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_UsersInRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_Specialists_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_SpecialistsInTechnologies_Users_Specialists" ManuallyRouted="false" />
+        <AssociationConnector Association="LetsTestModel.FK_UsersInRoles_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
